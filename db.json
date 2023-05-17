@@ -1,0 +1,36 @@
+{
+  "data":[
+    {
+      "id":1,
+      "name": "Jack",
+      "second_name": "Daniels",
+      "black":true
+  
+    },
+  {
+      "id":2,
+      "name": "Jameson",
+      "second_name": "Brown",
+      "black":false
+  
+  },
+  {
+      "id":3,
+      "name":"Martin",
+      "second_name": "Lurther",
+      "black":true
+  
+  },
+  {
+      "id":4,
+      "name": "Barack",
+      "second_name": "Obama",
+      "black":false
+  
+  }
+  
+
+
+
+  ]
+}
