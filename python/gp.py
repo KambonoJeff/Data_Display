@@ -55,7 +55,6 @@ def deploy():
         print("Current Time:", current_time.strftime("%Y-%m-%d %H:%M:%S"))
 
     print("SUCCESSFULLY PUSHED ALL FILES :")
-    exit()
 
 def get_user_input():
     return input("ENTER THE NUMBER OF COMMITS: ")
