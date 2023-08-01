@@ -3,6 +3,7 @@ import random
 import string
 import time
 from datetime import datetime
+import requests
 
 cmd_command = " git add ."
 cmd_command1 = " git commit -a -m \"python testing\" "
@@ -18,26 +19,13 @@ def deploy():
         print("FIRST process completed")
 
         time = print("Current Time:\n",current_time.strftime("%Y-%m-%d %H:%M:%S") )
-        time
-        time
-        time
-        time
-        time
-        time
-        time
+        
 
     else:
         print(" FIRST NOT COMPLETED!!!!")
         
         time = print("Current Time:\n",current_time.strftime("%Y-%m-%d %H:%M:%S") )
-        time
-        time
-        time
-        time
-        time
-        time
-        time
-
+        
     completed_process1 = subprocess.run(cmd_command1, shell=True, check=True, text=True)
     
     if completed_process1:
@@ -92,20 +80,32 @@ def rounds():
         min_time = 200
         max_time = 600
         sleep_time =random.randint(min_time,max_time)
-
         for _ in range(number):
             formation()
             time.sleep(sleep_time)
-
     except ValueError:
         print("NOT AN INTEGER!!!")
+def call_process():
+    url = "https://www.google.com/"  # Replace with the URL of the API you want to call
 
+    try:
+        response = requests.get(url)
+
+        # Check if the request was successful (status code 200)
+        if response.status_code == 200:
+            # The API call was successful, and the response is available in the 'response' variable
+            data = response.json()  # Use .json() to parse the response as JSON
+            print(data)
+        else:
+            # Handle the case where the API call was not successful
+            print(f"Error: {response.status_code} - {response.text}")
+
+    except requests.exceptions.RequestException as e:
+        # Handle any exceptions that may occur during the request
+        print(f"Error: {e}")
 
 try:
-    rounds()
-    
-   
-
+    rounds()    
 except subprocess.CalledProcessError as e:
     print(f"Command failed with exit code: {e.returncode}")
     print(f"Error message LEVEL 0NE ALERT : {e.stderr}")
