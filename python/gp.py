@@ -77,8 +77,8 @@ def rounds():
             print("The number is greater than 20 enter less commits")
             get_user_input()
 
-        min_time = 200
-        max_time = 600
+        min_time = 10
+        max_time = 100
         sleep_time =random.randint(min_time,max_time)
         for _ in range(number):
             formation()
