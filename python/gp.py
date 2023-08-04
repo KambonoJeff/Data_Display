@@ -48,7 +48,7 @@ def get_user_input():
     return input("ENTER THE NUMBER OF COMMITS: ")
 
 def text_generator_a():
-    min_content = 100
+    min_content = 500
     max_content = 3000
     content = random.randint(min_content,max_content)
 
@@ -56,8 +56,11 @@ def text_generator_a():
         random_string = ' '.join(random.choices(string.ascii_letters, k=content))
         file.write(random_string)
 def text_generator_w():
+    min_content = 500
+    max_content = 3000
+    content = random.randint(min_content,max_content)
     with open("test.txt", "w") as file:
-        random_string = ' \n'.join(random.choices(string.ascii_letters, k=2000))
+        random_string = ' \n'.join(random.choices(string.ascii_letters, k=content))
         file.write(random_string)
 
 def randomFunc():
