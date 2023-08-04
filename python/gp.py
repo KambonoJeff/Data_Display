@@ -53,7 +53,7 @@ def text_generator_a():
     content = random.randint(min_content,max_content)
 
     with open("test.txt", "a") as file:
-        random_string = ' '.join(random.choices(string.ascii_letters, k=content))
+        random_string = ' '.join(random.choices(string.ascii_letters, k=208))
         file.write(random_string)
 def text_generator_w():
     min_content = 500
