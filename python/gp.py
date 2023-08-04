@@ -69,7 +69,7 @@ def randomFunc():
     executeThis()
 
 def formation():
-    text_generator_a()
+    text_generator_w()
     deploy()
 
 def rounds():
