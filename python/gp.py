@@ -48,8 +48,12 @@ def get_user_input():
     return input("ENTER THE NUMBER OF COMMITS: ")
 
 def text_generator_a():
+    min_content = 100
+    max_content = 3000
+    content = random.randint(min_content,max_content)
+
     with open("test.txt", "a") as file:
-        random_string = ' '.join(random.choices(string.ascii_letters, k=20))
+        random_string = ' '.join(random.choices(string.ascii_letters, k=content))
         file.write(random_string)
 def text_generator_w():
     with open("test.txt", "w") as file:
@@ -62,7 +66,7 @@ def randomFunc():
     executeThis()
 
 def formation():
-    text_generator_w()
+    text_generator_a()
     deploy()
 
 def rounds():
@@ -77,8 +81,8 @@ def rounds():
             print("The number is greater than 20 enter less commits")
             get_user_input()
 
-        min_time = 10
-        max_time = 100
+        min_time = 100
+        max_time = 300
         sleep_time =random.randint(min_time,max_time)
         for _ in range(number):
             formation()
