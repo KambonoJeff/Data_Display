@@ -12,7 +12,7 @@ current_time = datetime.now()
 
 def commit_m():
 
-    python_testing = ' '.join(random.choices(string.ascii_letters, k=32))
+    python_testing = ''.join(random.choices(string.ascii_letters, k=32))
     cmd_command1 = " git commit -a -m \"  " + python_testing + " \" "
     print(cmd_command1)
     return cmd_command1
