@@ -6,10 +6,16 @@ from datetime import datetime
 import requests
 
 cmd_command = " git add ."
-cmd_command1 = " git commit -a -m \"python testing\" "
 cmd_command2 = "git push -u origin"
 
 current_time = datetime.now()
+
+def commit_m():
+
+    python_testing = ' '.join(random.choices(string.ascii_letters, k=32))
+    cmd_command1 = " git commit -a -m \"  " + python_testing + " \" "
+    print(cmd_command1)
+    return cmd_command1
 
 def deploy():
     
@@ -26,7 +32,7 @@ def deploy():
         
         time = print("Current Time:\n",current_time.strftime("%Y-%m-%d %H:%M:%S") )
         
-    completed_process1 = subprocess.run(cmd_command1, shell=True, check=True, text=True)
+    completed_process1 = subprocess.run(commit_m(), shell=True, check=True, text=True)
     
     if completed_process1:
         print("SECOND process completed")
@@ -67,23 +73,19 @@ def randomFunc():
     option = [text_generator_a,text_generator_w]
     executeThis = random.choice(option)
     executeThis()
-
 def formation():
     text_generator_w()
     deploy()
-
 def rounds():
     userInput = get_user_input()
     try:
         number=int(userInput)
         ######################################
-
         ######################################
         print("THE USER INPUT IS :" , number)
         if number > 20:
             print("The number is greater than 20 enter less commits")
             get_user_input()
-
         min_time = 100
         max_time = 300
         sleep_time =random.randint(min_time,max_time)
@@ -93,23 +95,19 @@ def rounds():
     except ValueError:
         print("NOT AN INTEGER!!!")
 def call_process():
-    url = "https://www.google.com/"  # Replace with the URL of the API you want to call
-
+    url = "https://www.google.com/"  
     try:
         response = requests.get(url)
-
-        # Check if the request was successful (status code 200)
         if response.status_code == 200:
-            # The API call was successful, and the response is available in the 'response' variable
-            data = response.json()  # Use .json() to parse the response as JSON
             print(data)
         else:
-            # Handle the case where the API call was not successful
             print(f"Error: {response.status_code} - {response.text}")
-
     except requests.exceptions.RequestException as e:
-        # Handle any exceptions that may occur during the request
         print(f"Error: {e}")
+
+##########################################################################...underdef:
+
+
 
 try:
     rounds()    
