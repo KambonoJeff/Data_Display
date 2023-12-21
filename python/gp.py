@@ -83,7 +83,7 @@ def rounds():
         ######################################
         ######################################
         print("THE USER INPUT IS :" , number)
-        if number > 20:
+        if number > 200:
             print("The number is greater than 20 enter less commits")
             get_user_input()
         min_time = 10
